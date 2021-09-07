@@ -15,7 +15,13 @@ get '/coding' do
   "This is coding."
 end
 
-get '/cat' do
+get '/random-cat' do
   @cat_name = ['Fluffy', 'Coco', 'Ginger', 'Snowball'].sample
+  erb (:index)
+end 
+
+get '/named-cat' do
+  p params
+  @cat_name = params[:cat_name]
   erb (:index)
 end 
